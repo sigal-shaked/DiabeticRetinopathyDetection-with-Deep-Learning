@@ -8,39 +8,28 @@ https://www.kaggle.com/c/facial-keypoints-detection/details/deep-learning-tutori
 
 #Working with AWS:
 This was my first experience with using amazon's web services, so I will mention the main obstacles on the way:
-
-1. The image in the link is now called ami-b141a2f5.
-2. In order to find it make sure to set the region in the above ribbon to N. California.
-3. Following the instructions from the link above, I still had to install/update some packages myself, so here is a what I eventually ran in order to set the environment:
-
-  - git clone https://github.com/wendykan/AWSGPU_DeepLearning.git 
-  - chmod 777 -R AWSGPU_DeepLearning/
-  - sudo apt-get install libfreetype6-dev
-  - sudo apt-get install libpng12-dev
-  - wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
-  - ./AWSGPU_DeepLearning/setup.sh
-  - pip install -r https://raw.githubusercontent.com/dnouri/kfkd-tutorial/master/requirements.txt
-
-4. From the home directory, add the following ~/.theanorc file that configures Theano to use the machine's GPU"
-
-  - vi .theanorc
-  - Type I for insert, then paste the following text:
-      
-      [global]
-      
-      floatX = float32
-      
-      device = gpu0
-      
-      [nvcc]
-      
-      fastmath = True
-      
-      [mode]
-      
-      optimizer_excluding=conv_gemm
-  - Type esc+: wq to exit and save vi
-  - sudo ldconfig /usr/local/cuda/lib64
+  1. The image in the link is now called ami-b141a2f5.
+  2. In order to find it make sure to set the region in the above ribbon to N. California.
+  3. Following the instructions from the link above, I still had to install/update some packages myself, so here is a what I eventually ran in order to set the environment:
+    - git clone https://github.com/wendykan/AWSGPU_DeepLearning.git 
+    - chmod 777 -R AWSGPU_DeepLearning/
+    - sudo apt-get install libfreetype6-dev
+    - sudo apt-get install libpng12-dev
+    - wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+    - ./AWSGPU_DeepLearning/setup.sh
+    - pip install -r https://raw.githubusercontent.com/dnouri/kfkd-tutorial/master/requirements.txt
+  4. From the home directory, add the following ~/.theanorc file that configures Theano to use the machine's GPU"
+    - vi .theanorc
+    - Type I for insert, then paste the following text:
+        - [global]
+        - floatX = float32
+        - device = gpu0
+        - [nvcc]
+        - fastmath = True
+        - [mode]
+        - optimizer_excluding=conv_gemm
+    - Type esc+: wq to exit and save vi
+    - sudo ldconfig /usr/local/cuda/lib64
 
 #Working with Unix:
 1. Most installations only succeeded from root directory using sudo prefix
@@ -56,6 +45,6 @@ This was my first experience with using amazon's web services, so I will mention
   - Run using Ipython: Ipython
   - Type %autoindent to set off indentation and be able to paste blocks of code
 
-4.	Split large files (to 10000 lines per file, for example): 
+4. Split large files (to 10 files, for example, with no line breaks): 
 
-  split -l/N 10000 orig_file.txt new
+  split -n l/10 -a1 -d src_file new
