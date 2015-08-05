@@ -22,7 +22,7 @@ It takes time to find the right guides, here are the excellent links that led me
 (note: it is only possible to unzip after downloading all the partitioned files).
 2. Use the /code/PlayingWithImage.ipynb if you want to play a bit with an image or to and watch the steps of its processing,
 3. Execute /code/processImages.py (after setting train and test paths) in order to go over the images, process them and save the processed data in a txt file. (two files actually: for train and test)
-4. Follow /configuration/readme.docx file in order to connect to AWS and set the required packages.
+4. Follow /configuration/readme.md file in order to connect to AWS and set the required packages.
 5. Execute /code/classifyData.ipynb step by step in order to try two optional NeuralNets to solve this task. 
 
 **Bad news:** The results only put me on the 270 place in the competition, but this is only a starting point, 
